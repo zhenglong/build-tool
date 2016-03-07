@@ -3,10 +3,9 @@
 ===============================================================================*/
 // var $ = require('./dom7');
 import React from 'react';
-import Dom7 from './dom7';
+import {Dom7 as $} from './dom7';
 import StyleAccordion from './accordion.less';
 
-var $ = Dom7;
 // ui render
 // event registration
 export default class Accordion extends React.Component {
@@ -85,7 +84,19 @@ export default class Accordion extends React.Component {
 					</li>
 				</ul>
             </div>
+    }
 
+    static registerEvents() {
+        $(document).on('click', '.accordion-item-toggle, .item-link', function(e) {
+            var clicked = $(this);
+            if (clicked.hasClass('accordion-item-toggle') ||
+                (clicked.hasClass('item-link') && clicked.parent().hasClass('accordion-item'))) {
+                var accordionItem = clicked.parent('.accordion-item');
+                if (accordionItem.length === 0) accordionItem = clicked.parents('.accordion-item');
+                if (accordionItem.length === 0) accordionItem = clicked.parents('li');
+                Accordion.toggle(accordionItem);
+            }
+        });
     }
 
     static toggle(item) {

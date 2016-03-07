@@ -10,8 +10,7 @@ import StyleViews from './views.less';
 import StyleToolbarsPages from './toolbars-pages.less';
 import StylePages from './pages.less';
 
-var app = {}; // TODO: app configuration
-
+var app = window.f7;
 class Tabs extends React.Component {
     render() {
         return <div className='views tabs toolbar-through'>
@@ -64,7 +63,7 @@ class Tabs extends React.Component {
             var viewContainer;
             if (newTab.hasClass(app.params.viewClass)) viewContainer = newTab[0];
             else viewContainer = newTab.parents('.' + app.params.viewClass)[0];
-            app.sizeNavbars(viewContainer);
+            app.sizeNavbars(viewContainer); // TODO: introduced in navbars
         }
 
         // Find related link for new tab
@@ -106,13 +105,22 @@ class Tabs extends React.Component {
                     if (tabbar.find('.tab-link-highlight').length === 0) {
                         tabbar.find('.toolbar-inner').append('<span class="tab-link-highlight"></span>');
                     }
-                    app.materialTabbarSetHighlight(tabbar, tabLink);
+                    app.materialTabbarSetHighlight(tabbar, tabLink); // TODO: introduced in material-tabbar
                 }
             }
         }
         if (oldTabLink && oldTabLink.length > 0) oldTabLink.removeClass('active');
 
         return true;
+    }
+    static registerEvents() {
+        var isTabLink;
+        $(document).on('click', '.tab-link', function(e) {
+            var clicked = $(this);
+            var clickedData = clicked.dataset();
+            isTabLink = true;
+            Tabs.showTab(clickedData.tab || clicked.attr('href'), clicked);
+        });
     }
 }
 

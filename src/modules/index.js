@@ -1,11 +1,16 @@
+import Settings from '../components/settings';
 import StyleIntro from '../styles/intro.less';
 import styleApp from '../styles/app.scss';
 import Accordion from '../components/accordion.js';
 import {Tabs, TabPanel} from '../components/tabs.js';
 import Button from '../components/button.js';
+import styleContentBlock from '../components/content-block.less';
 import styleIndex from '../styles/index.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
+
+Accordion.registerEvents();
+Tabs.registerEvents();
 
 ReactDOM.render(
     <div className="container-placeholder">
@@ -15,7 +20,9 @@ ReactDOM.render(
                 <Accordion />
             </TabPanel>
             <TabPanel id='view-2'>
+                <div className="content-block">
                 about me
+                </div>
             </TabPanel>
             <div className="toolbar tabbar tabbar-labels">
                 <div className="toolbar-inner">
