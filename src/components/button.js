@@ -5,17 +5,16 @@
  * Distributed under terms of the MIT license.
  */
 
-/*import React from 'react';
-import styleApp from '../styles/app.scss';
+import React from 'react';
 import styleButton from './button.scss';
 
 export default class Button extends React.Component {
     render() {
         return <button type="button">{this.props.text}</button>
     }
-}*/
+}
 
-var React = require('react');
+/*var React = require('react');
 var styleApp = require('../styles/app.scss');
 var styleButton = require('./button.scss');
 
@@ -24,5 +23,4 @@ module.exports = React.createClass({
     render: function() {
         return <button type="button">{this.props.text}</button>
     }
-});
-
+});*/

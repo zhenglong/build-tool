@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --hot --progress --colors --port 3333 --content-base ./src/"
+    "dev": "webpack-dev-server --devtool eval-source-map --hot --progress --colors --port 3333 --content-base ./src/"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,8 @@
     "eslint": "^2.3.0",
     "eslint-plugin-react": "^4.1.0",
     "html-loader": "^0.4.3",
+    "less": "^2.6.1",
+    "less-loader": "^2.2.2",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
@@ -27,6 +29,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "classnames": "^2.2.3",
     "mustache": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
