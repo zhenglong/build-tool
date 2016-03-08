@@ -1,0 +1,12 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [{
+        "agentId": "张三",
+        "role": "D2",
+        "headUrl": "#",
+        "status": 100,
+        "submitDate": 1457416641924
+    }]
+
+}

@@ -8,33 +8,38 @@ import styleContentBlock from '../components/content-block.less';
 import styleIndex from '../styles/index.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import SalesUtil from '../components/sales-util.js';
 
 Accordion.registerEvents();
 Tabs.registerEvents();
 
-ReactDOM.render(
-    <div className="container-placeholder">
-        <div className='statusbar-overlay'></div>
-        <Tabs>
-            <TabPanel id='view-1' isActive={true}>
-                <Accordion />
-            </TabPanel>
-            <TabPanel id='view-2'>
-                <div className="content-block">
-                about me
+SalesUtil.get('/api/sales/agent/list/', function(result) {
+    var list = result.data;
+    console.log(list);
+    ReactDOM.render(
+        <div className="container-placeholder">
+            <div className='statusbar-overlay'></div>
+            <Tabs>
+                <TabPanel id='view-1' isActive={true}>
+                    <Accordion list={list} />
+                </TabPanel>
+                <TabPanel id='view-2'>
+                    <div className="content-block">
+                    about me
+                    </div>
+                </TabPanel>
+                <div className="toolbar tabbar tabbar-labels">
+                    <div className="toolbar-inner">
+                        <a href="#view-1" className="tab-link active">
+                            <i className="icon manage"></i>
+                            <span className="tabbar-label">管理</span>
+                        </a>
+                        <a href="#view-2" className="tab-link">
+                            <i className="icon about-me"></i>
+                            <span className="tabbar-label">我</span>
+                        </a>
+                    </div>
                 </div>
-            </TabPanel>
-            <div className="toolbar tabbar tabbar-labels">
-                <div className="toolbar-inner">
-                    <a href="#view-1" className="tab-link active">
-                        <i className="icon manage"></i>
-                        <span className="tabbar-label">管理</span>
-                    </a>
-                    <a href="#view-2" className="tab-link">
-                        <i className="icon about-me"></i>
-                        <span className="tabbar-label">我</span>
-                    </a>
-                </div>
-            </div>
-        </Tabs>
-    </div>, document.getElementsByClassName('body')[0]);
+            </Tabs>
+        </div>, document.getElementsByClassName('body')[0]);
+});

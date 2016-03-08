@@ -1,0 +1,70 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "salesArea": "江苏省_苏州",
+            "headUrl": "",
+            "agentName": "张三儿",
+            "agentId": "1",
+            "role": "D3",
+            "managedRole": "D2",
+            "managedAreasCount": 1,
+            "managedAreas": [
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "2",
+                    "managedRole": "D1"
+                },
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "3",
+                    "managedRole": "D1"
+                },
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "4",
+                    "managedRole": "D1"
+                }
+            ]
+        },
+        {
+            "salesArea": "江苏省_苏州",
+            "headUrl": "",
+            "agentName": "张三儿",
+            "agentId": "5",
+            "role": "D3",
+            "managedRole": "D2",
+            "managedAreasCount": 1,
+            "managedAreas": [
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "6",
+                    "managedRole": "D1"
+                },
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "7",
+                    "managedRole": "D1"
+                },
+                {
+                    "salesArea": "江苏_苏州_昆山",
+                    "headUrl": "",
+                    "agentName": "王二儿",
+                    "agentId": "8",
+                    "managedRole": "D1"
+                }
+            ]
+        }
+    ]
+}

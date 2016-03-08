@@ -6,82 +6,55 @@ import React from 'react';
 import {Dom7 as $} from './dom7';
 import StyleAccordion from './accordion.less';
 
+class AccordionItem extends React.Component {
+    render() {
+        return <li className="accordion-item">
+            <a href="#" className="item-link item-content">
+                <div className="item-inner">
+                    <div className="item-title">
+                        <div className="left">
+                            {this.props.item.salesArea}
+                        </div>
+                        <div className="right">
+                            <img src={this.props.item.headUrl || "../assets/img/placeholder.png"} className="photo" />
+                            <span>{this.props.item.agentName}</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div className="accordion-item-content">
+                <div className="content-block">
+                    <ul>
+                        {
+                            this.props.item.managedAreas.map(function(child) {
+                                console.log('1');
+                                return <li className="info" key={child.agentId}>
+                                    <img src={child.headUrl || "../assets/img/placeholder.png"} className="photo" />
+                                    <p>
+                                    {child.agentName} <br/>
+                                    {child.salesArea}
+                                    </p>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
+        </li>
+    }
+}
+
 // ui render
 // event registration
 export default class Accordion extends React.Component {
     render() {
+        var items = [];
+        this.props.list.forEach(function(item) {
+            items.push(<AccordionItem item={item} />);
+        });
         return <div className="list-block accordion-list">
 				<ul id="list">
-					<li className="accordion-item">
-						<a href="#" className="item-link item-content">
-							<div className="item-inner">
-								<div className="item-title">
-									<div className="left">
-                                        江苏省_苏州
-									</div>
-									<div className="right">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <span>张三儿</span>
-									</div>
-								</div>
-							</div>
-						</a>
-						<div className="accordion-item-content">
-							<div className="content-block">
-								<ul>
-									<li className="info">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <p>
-                                        王二儿 <br/>
-										江苏省_苏州_昆山
-										</p>
-									</li>
-									<li className="info">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <p>
-                                        王二儿 <br/>
-										江苏省_苏州_昆山
-										</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li className="accordion-item">
-						<a href="#" className="item-link item-content">
-							<div className="item-inner">
-								<div className="item-title">
-									<div className="left">
-                                        江苏省_苏州
-									</div>
-									<div className="right">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <span>张三儿</span>
-									</div>
-								</div>
-							</div>
-						</a>
-						<div className="accordion-item-content">
-							<div className="content-block">
-								<ul>
-									<li className="info">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <p>
-                                        王二儿 <br/>
-										江苏省_苏州_昆山
-										</p>
-									</li>
-									<li className="info">
-                                        <img src="../assets/img/placeholder.png" className="photo" />
-                                        <p>
-                                        王二儿 <br/>
-										江苏省_苏州_昆山
-										</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</li>
+                    {items}
 				</ul>
             </div>
     }
