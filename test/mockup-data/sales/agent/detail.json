@@ -1,0 +1,19 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+        "salesArea": ["苏州市", "昆山市"],
+        "agentName": "黄强",
+        "idCard": "310125487542154548",
+        "mobileNo": "12545874568",
+        "contactName": "李大",
+        "contactRelationship": 1,
+        "contactTelNo": "15854875458",
+        "headUrl": "",
+        "idCardFrontUrl": "",
+        "idCardBackUrl": "",
+        "contractUrl": ["", "", ""],
+        "secretContractUrl": [""],
+        "creditReportUrl": [""]
+    }
+}
