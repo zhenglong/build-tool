@@ -13,6 +13,9 @@ var TestNative = {
     },
     stopRefresh: function() {
         console.log('stopRefresh called');
+    },
+    showDialog: function() {
+        console.log('showDialog called');
     }
 };
 window.bridge = new Bridge(TestNative, {});

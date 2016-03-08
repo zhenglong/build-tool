@@ -8,6 +8,7 @@ import styleContentBlock from '../components/content-block.less';
 import styleIndex from '../styles/index.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import {Dom7 as $} from '../components/dom7.js';
 import SalesUtil from '../components/sales-util.js';
 
 Accordion.registerEvents();
@@ -15,7 +16,6 @@ Tabs.registerEvents();
 
 SalesUtil.get('/api/sales/agent/list/', function(result) {
     var list = result.data;
-    console.log(list);
     ReactDOM.render(
         <div className="container-placeholder">
             <div className='statusbar-overlay'></div>
@@ -42,4 +42,9 @@ SalesUtil.get('/api/sales/agent/list/', function(result) {
                 </div>
             </Tabs>
         </div>, document.getElementsByClassName('body')[0]);
+        window.setTimeout(function() {
+            if (list.length == 1) {
+                Accordion.open($('.accordion-item')[0]);
+            }
+        }, 0);
 });

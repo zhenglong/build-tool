@@ -26,8 +26,7 @@ class AccordionItem extends React.Component {
                 <div className="content-block">
                     <ul>
                         {
-                            this.props.item.managedAreas.map(function(child) {
-                                console.log('1');
+                            (this.props.item.managedAreas || []).map(function(child) {
                                 return <li className="info" key={child.agentId}>
                                     <img src={child.headUrl || "../assets/img/placeholder.png"} className="photo" />
                                     <p>

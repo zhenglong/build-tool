@@ -9,7 +9,7 @@
             "agentId": "1",
             "role": "D3",
             "managedRole": "D2",
-            "managedAreasCount": 1,
+            "managedAreasCount": 3,
             "managedAreas": [
                 {
                     "salesArea": "江苏_苏州_昆山",
@@ -41,7 +41,7 @@
             "agentId": "5",
             "role": "D3",
             "managedRole": "D2",
-            "managedAreasCount": 1,
+            "managedAreasCount": 3,
             "managedAreas": [
                 {
                     "salesArea": "江苏_苏州_昆山",
@@ -65,6 +65,16 @@
                     "managedRole": "D1"
                 }
             ]
+        },
+        {
+
+            "salesArea": "江苏省_苏州",
+            "headUrl": "",
+            "agentName": "张三儿",
+            "agentId": "9",
+            "role": "D3",
+            "managedRole": "D2",
+            "managedAreasCount": 0
         }
     ]
 }
