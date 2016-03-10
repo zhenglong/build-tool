@@ -5,7 +5,7 @@ import Accordion from '../components/accordion.js';
 import {Tabs, TabPanel} from '../components/tabs.js';
 import Button from '../components/button.js';
 import styleContentBlock from '../components/content-block.less';
-import styleIndex from '../styles/index.scss';
+import styleAgentDetail from '../styles/agent_detail.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import {Dom7 as $} from '../components/dom7.js';
@@ -52,7 +52,7 @@ SalesUtil.get('/api/sales/agent/info/', function(result) {
                                                     </div>
                                                 </div>
                                             </li>
-                                        });
+                                        })
                                     }
                                     </ul>
                                 </div>
@@ -62,9 +62,4 @@ SalesUtil.get('/api/sales/agent/info/', function(result) {
                 </div>
             </div>
         </div>, document.getElementsByClassName('body')[0]);
-        window.setTimeout(function() {
-            if (list.length == 1) {
-                Accordion.open($('.accordion-item')[0]);
-            }
-        }, 0);
 });

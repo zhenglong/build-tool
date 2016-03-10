@@ -2,20 +2,24 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './src/modules/index.js',
+    entry: {
+        index: './src/modules/index.js',
+        'agent_detail': './src/modules/agent_detail.js'
+    },
     output: {
         path: 'dist',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     plugins: [
-        // new webpack.optimize.UglifyJsPlugin({
-        //     output: {
-        //         comments: false
-        //     },
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
+        new webpack.optimize.CommonsChunkPlugin('common.js'),
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false
+            },
+            compress: {
+                warnings: false
+            }
+        }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.DefinePlugin({

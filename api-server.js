@@ -57,7 +57,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 var router = express.Router();
-gets(router, ['/sales/agent/list/', '/sales/agent/query/']);
+gets(router, ['/sales/agent/list/', '/sales/agent/query/', '/sales/agent/info/']);
 app.use('/api', router);
 
 var server = app.listen(3334, function() {
