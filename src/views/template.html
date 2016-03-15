@@ -6,14 +6,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<title>Index</title>
+		<title>{{title}}</title>
 	</head>
 	<body>
         <div class="body"></div>
+		<!-- sdk -->
 		<script src="../sdk/bridge.js"></script>
 		<script src="../sdk/native.js"></script>
 		<script src="../sdk/native-test.js"></script>
+		<!-- common-js -->
 	    <script src="../common.js"></script>
-		<script src="../index.js"></script>
+		<!-- page-js -->
+		<script src="../{{page}}.js"></script>
 	</body>
 </html>

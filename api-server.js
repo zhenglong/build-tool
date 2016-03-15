@@ -20,6 +20,7 @@ function isFunction(obj) {
 }
 function route(fileName) {
     return function(req, res) {
+        console.log(req.body);
         var fn = fileName;
         var args = process.argv;
         if (isFunction(fn)) fn = fn(req);
@@ -59,6 +60,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 var router = express.Router();
 gets(router, ['/sales/agent/list/', '/sales/agent/query/', '/sales/agent/info/']);
 app.use('/api', router);
+
+var jdRouter = express.Router();
+gets(jdRouter, ['/jdtest/city/']);
+jdRouter.post('/jdtest/customer/', function(req, res) {
+    console.log(req.body);
+    res.json('');
+});
+app.use('/', jdRouter);
 
 var server = app.listen(3334, function() {
 	var address = server.address();
