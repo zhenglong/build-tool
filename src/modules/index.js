@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import {Dom7 as $} from '../components/dom7.js';
 import SalesUtil from '../components/sales-util.js';
-require('template-html?engine=handlebars!file?name=views/index-[hash].html!../views/template.html');
+import Page from 'file?name=../views/index.html!template-html?engine=handlebars&raw&title=index&name=index!../views/template.html';
 
 Accordion.registerEvents();
 Tabs.registerEvents();

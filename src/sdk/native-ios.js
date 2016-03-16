@@ -49,7 +49,7 @@ setupWebViewJavascriptBridge(function(bridge) {
         }
     };
     var $$ = Dom7;
-    window.bridge = new Bridge(new Native(iosNative, $$.ajax));
+    window.bridge = new Bridge(new Native(iosNative));
     $$(document).trigger('bridgeReady');
 
 });

@@ -18,4 +18,4 @@ var TestNative = {
         console.log('showDialog called');
     }
 };
-window.bridge = new Bridge(TestNative, {});
+window.bridge = new Bridge(TestNative);

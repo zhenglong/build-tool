@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import {Dom7 as $} from '../components/dom7.js';
 import SalesUtil from '../components/sales-util.js';
-require('template-html?engine=handlebars!file?name=views/agent_detail-[hash].html!../views/template.html');
+import Page from 'file?name=../views/agent_detail.html!template-html?engine=handlebars&raw&title=D3体系&name=agent_detail!../views/template.html';
 
 Accordion.registerEvents();
 Tabs.registerEvents();

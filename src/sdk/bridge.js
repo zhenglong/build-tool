@@ -1,6 +1,6 @@
 ;
 
-function Bridge(native_, http) {
+function Bridge(native_) {
     var internalQueueName = '__internal__';
     var callbacks = {};
     var events = {};
@@ -53,13 +53,6 @@ function Bridge(native_, http) {
             if (params.success) {
                 callbacks[funcId] = function() {
                     params.success.apply(null, arguments);
-                    if (!params.uploadUrl) return;
-                    http.post(params.uploadUrl, {}, function() {
-                        self.trigger('uploadStateChange', {
-                            state: uploadState.complete
-                        });
-                        // cleanup the registered callbacks
-                    });
                 };
             }
             native_.displayImageChooser(funcId);

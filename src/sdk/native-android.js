@@ -4,4 +4,4 @@
 // }
 //}
 if (!window.Android) alert('Android is :' + Android);
-window.bridge = new Bridge(new Native(window.Android), Dom7.ajax);
+window.bridge = new Bridge(new Native(window.Android));

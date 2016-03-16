@@ -1,13 +1,21 @@
 var path = require('path');
 var webpack = require('webpack');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var extractScss = new ExtractTextPlugin('../styles/[name].css');
+var extractLess = new ExtractTextPlugin('../styles/[name].css');
+var wp_build_platform = process.env.WP_BUILD_PLATFORM;
+if (!wp_build_platform) {
+    console.error('please specify environment variable WP_BUILD_PLATFORM');
+    return;
+}
 module.exports = {
     entry: {
         index: './src/modules/index.js',
         'agent_detail': './src/modules/agent_detail.js'
     },
     output: {
-        path: 'dist',
+        hash: true,
+        path: 'dist/'+wp_build_platform+'/js',
         filename: '[name].js'
     },
     plugins: [
@@ -26,7 +34,9 @@ module.exports = {
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
-        })
+        }),
+        extractScss,
+        extractLess
     ],
     module: {
         loaders: [
@@ -41,17 +51,11 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                loader: 'style!css!sass',
-                loaders: ['style', 'css', 'sass']
+                loader: extractScss.extract(['css', 'sass']),
             },
             {
                 test: /\.less/,
-                loader: 'style!css!less',
-                loaders: ['style', 'css', 'less']
-            },
-            {
-                test: /\.html/,
-                loader: 'html'
+                loader: extractScss.extract(['css', 'less']),
             }
         ]
     }
