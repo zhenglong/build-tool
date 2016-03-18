@@ -10,19 +10,33 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import {Dom7 as $} from '../components/dom7.js';
 import SalesUtil from '../components/sales-util.js';
-import Page from 'file?name=../views/index.html!template-html?engine=handlebars&raw&title=index&name=index!../views/template.html';
+import Page from 'file?name=../views/index.html!template-html?engine=handlebars&raw&title=index&name=index!../views/template.release.html';
 
 Accordion.registerEvents();
 Tabs.registerEvents();
 
-SalesUtil.get('/api/sales/agent/list/', function(result) {
+//TODO: get login id from native
+var loginId = '123';
+SalesUtil.get('/api/sales/bd/'+ loginId + '/dealer-list/', function(result) {
     var list = result.data;
+    var roles = ['D3', 'D2', 'D1'];
+    function filter(list, cb) {
+        var res = [];
+        for (var i = 0; i < list.length; i++) {
+            if (cb(list[i])) res.push(list[i]);
+        }
+        return res;
+    }
+    var group = {};
+    for (var i = 0; i < roles.length; i++) {
+        group[roles[i]] = filter(list, l => l.role == roles[i]);
+    }
     ReactDOM.render(
         <div className="container-placeholder">
             <div className='statusbar-overlay'></div>
             <Tabs>
                 <TabPanel id='view-1' isActive={true}>
-                    <Accordion list={list} />
+                    <Accordion list={group} />
                 </TabPanel>
                 <TabPanel id='view-2'>
                     <div className="content-block">
@@ -44,8 +58,6 @@ SalesUtil.get('/api/sales/agent/list/', function(result) {
             </Tabs>
         </div>, document.getElementsByClassName('body')[0]);
         window.setTimeout(function() {
-            if (list.length == 1) {
-                Accordion.open($('.accordion-item')[0]);
-            }
+            Accordion.open($('.accordion-item'));
         }, 0);
 });

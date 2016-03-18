@@ -1,9 +1,9 @@
 {
-  "name": "y",
+  "name": "build_tool",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval-source-map --hot --progress --colors --port 3333 --content-base ./src/"
+    "dev": "WP_BUILD_PLATFORM=test webpack-dev-server --devtool eval-source-map --hot --progress --colors --port 3333 --content-base ./src/"
   },
   "author": "",
   "license": "ISC",

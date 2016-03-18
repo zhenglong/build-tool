@@ -1,0 +1,30 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+       "salesArea": "...._..",
+       "name": "..",
+       "idCardNum": "45894646489064",
+       "mobile": "13889543432",
+       "directRelative":{
+         "name": "..",
+         "relation": "..",
+         "mobile": "1485654545"
+       },
+       "headPhoto": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+       "idCardPhoto": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+       "agreementImage":[
+          "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+          "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+          "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0"
+       ],
+       "secrecyAgreementImage": [
+         "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+         "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0"
+       ],
+       "creditInfoImage": [
+         "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+         "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0"
+       ]
+    }
+}

@@ -12,13 +12,7 @@ class AccordionItem extends React.Component {
             <a href="#" className="item-link item-content">
                 <div className="item-inner">
                     <div className="item-title">
-                        <div className="left">
-                            {this.props.item.salesArea}
-                        </div>
-                        <div className="right">
-                            <img src={this.props.item.headUrl || "../assets/img/placeholder.png"} className="photo" />
-                            <span>{this.props.item.agentName}</span>
-                        </div>
+                        {this.props.item.key}
                     </div>
                 </div>
             </a>
@@ -26,12 +20,12 @@ class AccordionItem extends React.Component {
                 <div className="content-block">
                     <ul>
                         {
-                            (this.props.item.managedAreas || []).map(function(child) {
-                                return <li className="info" key={child.agentId}>
+                            (this.props.item.value || []).map(function(child) {
+                                return <li className="info" key={child.id}>
                                     <img src={child.headUrl || "../assets/img/placeholder.png"} className="photo" />
                                     <p>
-                                    {child.agentName} <br/>
-                                    {child.salesArea}
+                                        {child.name}<br/>
+                                        {(child.tag == 1) ?  <span>所属{child.superiorRole} &nbsp; {child.superiorName}</span> : ''}
                                     </p>
                                 </li>
                             })
@@ -48,9 +42,12 @@ class AccordionItem extends React.Component {
 export default class Accordion extends React.Component {
     render() {
         var items = [];
-        this.props.list.forEach(function(item) {
-            items.push(<AccordionItem item={item} />);
-        });
+        var item;
+        for (var key in this.props.list) {
+            if (!this.props.list.hasOwnProperty(key)) continue;
+            item = {key: key, value: this.props.list[key]};
+            items.push(<AccordionItem key={item.key} item={item} />);
+        }
         return <div className="list-block accordion-list">
 				<ul id="list">
                     {items}
@@ -83,9 +80,9 @@ export default class Accordion extends React.Component {
         var content = item.children('.accordion-item-content');
         if (content.length === 0) content = item.find('.accordion-item-content');
         var expandedItem = list.length > 0 && item.parent().children('.accordion-item-expanded');
-        if (expandedItem.length > 0) {
-            Accordion.close(expandedItem);
-        }
+        // if (expandedItem.length > 0) {
+        //     Accordion.close(expandedItem);
+        // }
         content.css('height', content[0].scrollHeight + 'px').transitionEnd(function () {
             if (item.hasClass('accordion-item-expanded')) {
                 content.transition(0);

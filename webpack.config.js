@@ -4,10 +4,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractScss = new ExtractTextPlugin('../styles/[name].css');
 var extractLess = new ExtractTextPlugin('../styles/[name].css');
 var wp_build_platform = process.env.WP_BUILD_PLATFORM;
+var wp_build_type = process.env.WP_BUILD_TYPE || 'development';
 if (!wp_build_platform) {
     console.error('please specify environment variable WP_BUILD_PLATFORM');
     return;
 }
+
 module.exports = {
     entry: {
         index: './src/modules/index.js',
@@ -32,7 +34,7 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify('production')
+                NODE_ENV: JSON.stringify(wp_build_type)
             }
         }),
         extractScss,
@@ -45,7 +47,12 @@ module.exports = {
                 loader: 'babel',
                 //include: __dirname + '/src',
                 query: {
-                    presets: ["react", "es2015", "react-hmre"],
+                    presets: ["react", "es2015"],
+                    env: {
+                        development: {
+                            presets: ["react-hmre"]
+                        }
+                    },
                     babelrc: false
                 }
             },

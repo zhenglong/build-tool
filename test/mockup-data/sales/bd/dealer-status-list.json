@@ -1,0 +1,32 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+                "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+                "name": "..",
+                "id": "7b3ddb9e-edeb-e511-909c-d89d672b352b",
+                "role": "D2",
+                "status": 100,
+        	    "submitDate": 1457416641924,
+        	    "description": "..."
+        },
+        {
+                "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+                "name": "..",
+                "id": "6b3ddb9e-edeb-e511-909c-d89d672b352b",
+                "role": "D1",
+                "status": 100,
+        	    "submitDate": 1457416641924,
+        	    "description": "..."
+        },{
+                "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+                "name": "..",
+                "id": "5b3ddb9e-edeb-e511-909c-d89d672b352b",
+                "role": "D1",
+                "status": 100,
+        	    "submitDate": 1457416641924,
+        	    "description": "..."
+        }
+        ]
+}

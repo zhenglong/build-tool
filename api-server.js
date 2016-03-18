@@ -40,7 +40,7 @@ function jsonFromFile(res, fileName) {
 
 function gets(router, routes) {
     routes.forEach(function(r) {
-        var p = path.join(jsonFileBase, r);
+        var p = path.join(jsonFileBase, r.replace(/\/:[^\/]+(?=[\/$])/g, ''));
         if (p[p.length - 1] == '/') p = p.substr(0, p.length - 1);
         p += '.json';
         router.use(r, route(p));
@@ -58,7 +58,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 var router = express.Router();
-gets(router, ['/sales/agent/list/', '/sales/agent/query/', '/sales/agent/info/']);
+gets(router, ['/sales/bd/:bdId/dealer-list/', '/sales/bd/:bdId/dealer-status-list/', '/sales/dealer/:dealerId/info/']);
 app.use('/api', router);
 
 var jdRouter = express.Router();

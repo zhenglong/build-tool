@@ -1,0 +1,46 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "张三",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b352b",
+            "role": "D3",
+            "managedRole": "D2",
+            "superiorId":"6b3ddb9e-edeb-e511-909c-d89d672b352b",
+            "superiorName": "李四",
+            "tag": 1
+        },
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "王五",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b3521",
+            "role": "D2",
+            "managedRole": "D1",
+            "superiorId":"7b3ddb9e-edeb-e511-909c-d89d672b342b",
+            "superiorName": "李四",
+            "tag": 1
+        },
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "赵六",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b3522",
+            "role": "D1",
+            "managedRole": null,
+            "superiorId":"4b3ddb9e-edeb-e511-909c-d89d672b352b",
+            "superiorName": "李四",
+            "tag": 1
+        },
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "王二小",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b3524",
+            "role": "D1",
+            "managedRole": null,
+            "superiorId":"7b3ddb9e-edeb-e511-909c-d89d672b3531",
+            "superiorName": "八路",
+            "tag": 0
+        }
+    ]
+}

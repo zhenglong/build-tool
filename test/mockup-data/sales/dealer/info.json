@@ -1,0 +1,32 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+        "salesArea": "..._..",
+        "mobile": "13879897068",
+        "superiorId":"6b3ddb9e-edeb-e511-909c-d89d672b352b",
+        "superiorName": "..",
+        "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+        "name": "..",
+        "id": "7b3ddb9e-edeb-e511-909c-d89d672b352b",
+        "role": "D2",
+        "managedRole": "D1",
+        "managedDealers":[
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "..",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b3522",
+            "role": "D1",
+            "managedRole": null,
+            "tag": 1
+        },
+        {
+            "headUrl": "http://wx.qlogo.cn/mmopen/HWs5iclIb7vxaqYXB6JyBx4UeG1QW6c2XvOJUibqqhYWOtwejIp1CHPxicBZtW3Ujx9fYkrGqicfgfXbatNsibZxpnf8Lr6JTq4p1/0",
+            "name": "..",
+            "id": "7b3ddb9e-edeb-e511-909c-d89d672b3523",
+            "role": "D1",
+            "managedRole": null,
+            "tag": 0
+        }]
+    }
+}
