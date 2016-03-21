@@ -5,19 +5,31 @@ import Accordion from '../components/accordion.js';
 import {Tabs, TabPanel} from '../components/tabs.js';
 import Button from '../components/button.js';
 import styleContentBlock from '../components/content-block.less';
-import styleAgentDetail from '../styles/agent_detail.scss';
+import styleDealerDetail from '../styles/dealer_detail.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import {Dom7 as $} from '../components/dom7.js';
 import SalesUtil from '../components/sales-util.js';
-import Page from 'file?name=../views/agent_detail.html!template-html?engine=handlebars&raw&title=D3体系&name=agent_detail!../views/template.release.html';
+import Page from 'file?name=../views/dealer_detail.html!template-html?engine=handlebars&raw&name=dealer_detail!../views/template.release.html';
 
 Accordion.registerEvents();
 Tabs.registerEvents();
 
-SalesUtil.get('/api/sales/agent/info/', function(result) {
+var dealerId = '123';
+var role = 'D3';
+var managedRole = 'D2';
+
+(function setNavbarStatus() {
+    window.bridge.setTitle(role);
+    window.bridge.addRightButtons([{
+        name: 'createDealer',
+        label: '添加',
+        action: 'dealer-create.html' // TODO: addRightButtons
+    }]);
+})();
+
+SalesUtil.get('/api/sales/dealer' + dealerId + '/info/', {}, function(result) {
     var detail = result.data;
-    detail.agentName = '张三儿'; // TODO: fetch from url
     ReactDOM.render(
         <div className="container-placeholder">
             <div className='statusbar-overlay'></div>
@@ -35,7 +47,7 @@ SalesUtil.get('/api/sales/agent/info/', function(result) {
                                         </p>
                                     </div>
                                     <span>
-                                        {detail.agentName}
+                                        {detail.dealerName}
                                     </span>
                                 </div>
                                 <div className="content-block-title">
@@ -49,7 +61,7 @@ SalesUtil.get('/api/sales/agent/info/', function(result) {
                                                 <div className="item-inner">
                                                     <div className="item-title">
                                                         <img src={item.headUrl || "img/placeholder.png"} className="photo" />
-                                                        <span>{item.agentName}</span>
+                                                        <span>{item.dealerName}</span>
                                                     </div>
                                                 </div>
                                             </li>

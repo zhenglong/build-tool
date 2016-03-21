@@ -1396,4 +1396,5 @@ var Dom7 = (function () {
     return $;
 })();
 
+window.Dom7 = Dom7;
 module.exports.Dom7 = Dom7;

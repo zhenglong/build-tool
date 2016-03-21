@@ -13,7 +13,7 @@ if (!wp_build_platform) {
 module.exports = {
     entry: {
         index: './src/modules/index.js',
-        'agent_detail': './src/modules/agent_detail.js'
+        'agent_detail': './src/modules/dealer_detail.js'
     },
     output: {
         hash: true,
@@ -48,11 +48,11 @@ module.exports = {
                 //include: __dirname + '/src',
                 query: {
                     presets: ["react", "es2015"],
-                    env: {
-                        development: {
-                            presets: ["react-hmre"]
-                        }
-                    },
+                    // env: {
+                    //     development: {
+                    //         presets: ["react-hmre"]
+                    //     }
+                    // },
                     babelrc: false
                 }
             },

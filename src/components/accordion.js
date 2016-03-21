@@ -22,11 +22,13 @@ class AccordionItem extends React.Component {
                         {
                             (this.props.item.value || []).map(function(child) {
                                 return <li className="info" key={child.id}>
-                                    <img src={child.headUrl || "../assets/img/placeholder.png"} className="photo" />
-                                    <p>
-                                        {child.name}<br/>
-                                        {(child.tag == 1) ?  <span>所属{child.superiorRole} &nbsp; {child.superiorName}</span> : ''}
-                                    </p>
+                                    <a class="item-link item-content external" href="status.html">
+                                        <img src={child.headUrl || "../assets/img/placeholder.png"} className="photo" />
+                                        <p>
+                                            {child.name}<br/>
+                                            {(child.tag == 1) ?  <span>所属{child.superiorRole} &nbsp; {child.superiorName}</span> : ''}
+                                        </p>
+                                    </a>
                                 </li>
                             })
                         }

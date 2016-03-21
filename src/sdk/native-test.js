@@ -8,6 +8,12 @@
 "use strict";
 
 var TestNative = {
+    setTitle: function() {
+        console.log('setTitle called');
+    },
+    addRightButtons: function() {
+        console.log('addRightButtons called');
+    },
     startRefresh: function() {
         console.log('startRefresh called');
     },
@@ -19,3 +25,7 @@ var TestNative = {
     }
 };
 window.bridge = new Bridge(TestNative);
+setTimeout(function() {
+    var $$ = Dom7; // TODO: use a better way
+    $$(document).trigger('bridgeReady');
+}, 0);

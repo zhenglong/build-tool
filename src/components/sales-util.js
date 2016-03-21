@@ -17,7 +17,6 @@ export default class SalesUtil {
             method: method,
             data: param,
             success: function(result) {
-                console.log(result);
                 successCallback(JSON.parse(result));
             }
         };
